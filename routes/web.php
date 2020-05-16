@@ -19,7 +19,12 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'book', 'middleware' => 'auth'], function(){
     Route::get('index', 'BookController@index')->name('book.index');
-
+    Route::get('create', 'BookController@create')->name('book.create');
+    Route::post('store', 'BookController@store')->name('book.store');
+    Route::get('show/{id}', 'BookController@show')->name('book.show');
+    Route::get('edit/{id}', 'BookController@edit')->name('book.edit');
+    Route::post('update/{id}', 'BookController@update')->name('book.update');
+    Route::post('destroy/{id}', 'BookController@destroy')->name('book.destroy');
 });
 
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreBook;
 
 class BookController extends Controller
 {
@@ -13,7 +16,19 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('book.index');
+        // $books = Book::all();
+
+        // dd($books);
+
+        $books = DB::table('books')
+        ->select('id', 'title', 'author','created_at')
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+
+
+
+        return view('book.index', compact('books'));
     }
 
     /**
@@ -23,7 +38,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+
+       return view("book.create");
+
     }
 
     /**
@@ -32,9 +49,19 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreBook $request)
     {
-        //
+        $book = new Book;
+
+
+        $book->title = $request->input('title');
+        $book->author = $request->input('author');
+        $book->comment = $request->input('comment');
+
+        $book->save();
+
+        return redirect('book/index');
+
     }
 
     /**
@@ -45,7 +72,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
+
+        return view('book.show', compact('book'));
     }
 
     /**
@@ -57,6 +86,9 @@ class BookController extends Controller
     public function edit($id)
     {
         //
+        $book = Book::find($id);
+
+        return view('book.edit', compact('book'));
     }
 
     /**
@@ -69,6 +101,17 @@ class BookController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $book = Book::find($id);
+
+        $book->title = $request->input('title');
+        $book->author = $request->input('author');
+        $book->comment = $request->input('comment');
+
+        $book->save();
+
+        return redirect('book/index');
+
+
     }
 
     /**
@@ -80,5 +123,11 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+        $book = Book::find($id);
+        $book->delete();
+
+        return redirect('book/index');
     }
-}
+
+};
+
