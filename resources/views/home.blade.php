@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">ホーム</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    ログインできました！<br>
+                    <form method="GET" action="{{route('book.index')}}">
+                　　 <input class="btn btn-info" type="submit" value="サービスを開始する">
+                    </form>
                 </div>
             </div>
         </div>

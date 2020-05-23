@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <div class="card-header">入力内容の確認</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,20 +14,23 @@
                         </div>
                     @endif
 
-                    タイトル:{{ $book->title}}<br>
-                    著者:{{ $book->author}}<br>
-                    コメント:{{ $book->comment}}
-
-                    <form method="GET" action="{{route('book.edit', ['id'=> $book->id])}}">
+                    <p class="my-3 py-3 h4">タイトル:
+                    <span class="mx-4">{{ $book->title}}</span><br></p>
+                    <p class="my-3 py-3 h4">著者:
+                    <span class="mx-4">{{ $book->author}}</span><br></p>
+                    <p class="my-3 py-3 h4">コメント:
+                     <span class="mx-4">{{ $book->comment}}</span><br></p>
+                     <div style="display:flex;">
+                        <form method="GET" action="{{route('book.edit', ['id'=> $book->id])}}">
                         @csrf
+                        <input class="btn btn-info btn-lg" type="submit" value="変更する">
+                      </form>
 
-
-                        <input class="btn btn-info" type="submit" value="変更する">
-                    </form>
                     <form method="POST" action="{{route('book.destroy', ['id'=> $book->id])}}" id="delete_{{$book->id}}">
                     @csrf
-                    <a href="#" class="btn btn-danger" data-id="{{ $book->id}}" onclick="deletePost(this);">削除する</a>
+                    <a href="#" class="btn btn-danger mx-3 btn-lg" data-id="{{ $book->id}}" onclick="deletePost(this);">削除する</a>
                     </form>
+                    </div>
 
 
                 </div>

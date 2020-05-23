@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="create">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">書籍を入力</div>
 
-                <div class="card-body">
+                <div class="card-body" style="height: 600px;">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -24,20 +24,21 @@
                     </div>
                     @endif
 
-                    本の情報を入力して下さい
-                    <form method="POST" action="{{route('book.store')}}">
+                    <h3 class="my-3">本の情報を入力して下さい</h3>
+                    <form method="POST" action="{{route('book.store')}}" class="h-100">
                         @csrf
                         タイトル<br>
-                        <input type="text" name="title">
+                        <input type="text" name="title" class="w-50 mb-3">
                         <br>
                         著者<br>
-                        <input type="text" name="author">
+                        <input type="text" name="author" class="w-50 mb-3">
                         <br>
-                        コメント　　(活かしていきたいもの、最も良かったところなど)<br>
-                        <textarea name="comment" style="heght:200px; width:500px;"></textarea>
+                        コメント<span class="text-muted">(活かしていきたいもの、最も良かったところなど)</span><br>
+                        <textarea name="comment" class="w-75 h-50"></textarea>
                         <br>
 
-                        <input class="btn btn-info" type="submit" value="本を登録する">
+
+                        <input class="btn btn-info btn-lg my-3" type="submit" value="本を登録する">
                     </form>
                 </div>
             </div>

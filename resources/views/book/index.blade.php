@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="index">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">書籍一覧表示</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,11 +14,17 @@
                         </div>
                     @endif
                     <form method="GET" action="{{ route('book.create') }}">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary my-3">
                             本を登録
                         </button>
                     </form>
-                    <table class="table">
+
+                    <form method="GET" action="{{route('book.index')}}" class="form-inline my-2">
+                        <input class="form-control mr-sm-2" name="search" type="search" placeholder="著者名" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">著者を検索する</button>
+                      </form>
+
+                    <table class="table my-3">
                         <thead class="thead-dark">
                           <tr>
                             <th scope="col">id</th>
@@ -40,6 +46,9 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    {{$books->links() }}
+
 
                 </div>
             </div>
