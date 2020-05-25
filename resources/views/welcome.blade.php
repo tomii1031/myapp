@@ -83,17 +83,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                          <li class="nav-item active">
-                            <a class="nav-link text-white" href="column">このサービスについて</a>
-                          </li>
                           <li class="nav-item">
                             <a class="nav-link text-white" href="book/create">書籍の入力</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link text-white" href="book/index">書籍管理</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">お問い合わせ</a>
                           </li>
                         </ul>
                       </div>

@@ -20,8 +20,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+    <div style="background-image: url({{ asset('images/back-image.jpg') }});  height:735px; background-size: cover;">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -81,15 +82,26 @@
                 </div>
             </div>
         </nav>
+    </header>
 
-        <main class="py-4 bg-light">
+
+        <div class="container py-5 my-5">
             @yield('content')
 
-        </main>
-
-
+        </div>
     </div>
-    
+    <footer>
+        <div class="bg-dark text-white text-center p-3">
+            Copyright - takashi tomii, 2020
+        </div>
+
+        </footer>
+
+
+
+
+
+
 
 
 </body>
