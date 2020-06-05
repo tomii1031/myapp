@@ -1,7 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" id="index">
+<div class="index-main">
+<div class="index-header">
+    <h2 class="my-2">書籍の一覧表示</h2>
+    <form method="GET" action="{{ route('book.create') }}">
+        <button type="submit" class="btn btn-primary my-3">
+            本を登録
+        </button>
+    </form>
+    <form method="GET" action="{{route('book.index')}}" class="form-inline my-4">
+        <input class="form-control mr-sm-2" name="search" type="search" placeholder="著者名" aria-label="Search">
+        <button class="btn btn-outline-success my-4 my-sm-0" type="submit">著者を検索する</button>
+      </form>
+</div>
+
+<div class="index-content grid">
+    @foreach($books as $book)
+    <div class="index-item" style="background-image: url({{ asset('images/index-vue2.jpeg') }}); background-size: cover;">
+        <p>タイトル:{{ $book->title}}</p>
+        <p>著者:{{ $book->author}}</p>
+        <p><a href="{{route('book.show',['id'=>$book->id] )}}">詳細をみる</a></p>
+    </div>
+    @endforeach
+
+</div>
+
+<div class="pagenate"> {{$books->links() }}</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <div class="container" id="index">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -54,6 +99,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
 

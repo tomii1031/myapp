@@ -46,7 +46,7 @@ class BookController extends Controller
 
         $query ->select('id', 'title', 'author','created_at');
         $query->orderBy('id', 'desc');
-        $books = $query->paginate(5);
+        $books = $query->paginate(6);
 
 
 

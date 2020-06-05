@@ -34,9 +34,6 @@
         <nav>
             <ul class="main-nav">
                 <li class="app-name menu h4 ml-3"><a href="{{ url('/') }}">MyLibrary</a></li>
-                <li class="menu ml-5"><a href="index">書籍の一覧</a></li>
-                <li class="menu ml-5"><a href="create">書籍の入力</a></li>
-                <li class="menu ml-5"><a href="#">お問い合わせ</a></li>
             </ul>
         </nav>
     </header>

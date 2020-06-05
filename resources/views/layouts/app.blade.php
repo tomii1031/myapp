@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/common.css')}}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -82,14 +84,20 @@
             </div>
         </nav>
 
-        <main class="py-4 bg-light">
+        <main class="py-4 bg-light main-content">
             @yield('content')
 
         </main>
 
 
     </div>
-    
+    <footer>
+        <div class="bg-dark text-white text-center p-3">
+            Copyright - takashi tomii, 2020
+        </div>
+
+        </footer>
+
 
 
 </body>
