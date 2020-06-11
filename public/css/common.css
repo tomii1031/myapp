@@ -12,7 +12,16 @@ body{
     text-align: center;
     margin: auto;
     width: 1000px;
-    height: 200px;
+
+}
+.index-main{
+    width: 1440px;
+    height:1000px;
+}
+
+.index-content{
+ width: 1400px;
+ height: 700px;
 }
 .grid{
     display: grid;
@@ -25,17 +34,33 @@ body{
 
 }
 .index-item{
-    height: 300px;
+    background-size: cover;
     text-align: center;
-    background-size: 477px 300px;
-
+    width: 449.33px;
+    height: 337px;
 
 }
 
 .index-item p{
-    margin-top: 50px;
+
     font-size: 20px;
+
+
+}
+
+.index-tab{
     font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+}
+
+.index-tab2{
+    border: 0.5px solid #000;
+    width: 220px;
+    text-align: center;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .pagenate{
@@ -47,6 +72,7 @@ body{
 
 .create-main{
     height: 800px;
+    text-align: center;
 }
 
 
@@ -60,7 +86,7 @@ body{
     font-size: 1.125rem;
     margin: 10px 0 0 40px;
     display: block;
-    font-size: 18px;
+    font-size: 20px;
 }
 .create-textarea{
     width: 100%;
@@ -88,8 +114,7 @@ body{
 }
 .c-error{
     float: right;
-    width: 400px;
-    margin-right: 80px;
+
 }
 .show-main{
     width: 100%;

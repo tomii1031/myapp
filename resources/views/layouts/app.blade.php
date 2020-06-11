@@ -84,7 +84,7 @@
             </div>
         </nav>
 
-        <main class="py-4 bg-light main-content">
+        <main class="index-main">
             @yield('content')
 
         </main>

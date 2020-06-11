@@ -17,10 +17,11 @@
 
 <div class="index-content grid">
     @foreach($books as $book)
-    <div class="index-item" style="background-image: url({{ asset('images/index-vue2.jpeg') }}); background-size: cover;">
-        <p>タイトル:{{ $book->title}}</p>
-        <p>著者:{{ $book->author}}</p>
-        <p><a href="{{route('book.show',['id'=>$book->id] )}}">詳細をみる</a></p>
+    <div class="index-item" style="background-image: url({{ asset('images/index-vue5.jpg') }});
+     ">
+        <p class="index-tab-title index-tab">タイトル</p><p class="index-tab2">{{ $book->title}}</p>
+        <p class="index-tab">著者</p><p class="index-tab2">{{ $book->author}}</p>
+        <p class="mt-3"><a href="{{route('book.show',['id'=>$book->id] )}}">詳細をみる</a></p>
     </div>
     @endforeach
 
