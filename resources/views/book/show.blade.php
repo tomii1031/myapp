@@ -38,7 +38,7 @@
             <p><span class="show-author mr-5">著者:</span>
            {{ $book->author}}</p>
             <p><span class="show-comment mr-3">コメント:</span>
-       {{ $book->comment}}></p>
+       {{ $book->comment}}</p>
 
 
 

@@ -9,11 +9,14 @@
             本を登録
         </button>
     </form>
-    <form method="GET" action="{{route('book.index')}}" class="form-inline my-4">
-        <input class="form-control mr-sm-2" name="search" type="search" placeholder="著者名" aria-label="Search">
-        <button class="btn btn-outline-success my-4 my-sm-0" type="submit">著者を検索する</button>
-      </form>
 </div>
+    <div class="serch-form ml-3">
+       <form method="GET" action="{{route('book.index')}}" class="form-inline my-4">
+            <input class="form-control mr-sm-2" name="search" type="search" placeholder="著者名" aria-label="Search">
+            <button class="btn btn-outline-success my-4 my-sm-0" type="submit">著者を検索する</button>
+      </form>
+    </div>
+
 
 <div class="index-content grid">
     @foreach($books as $book)
