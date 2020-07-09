@@ -25,14 +25,15 @@
 
 
 <body>
-<div class="create-main" style="background-image: url({{ asset('images/create-back5.jpg') }}); background-size: cover; background-blend-mode:lighten; background-color:rgba(255,255,255,0.3);">
+<div class="create-main" style="background-image: url({{ asset('images/create-back5.jpg') }}); background-size: cover; background-blend-mode:lighten;
+height: 850px; background-color:rgba(255,255,255,0.3);">
 <div class="create-form">
     <h2 class="create-title">書籍の入力</h2>
     @if ($errors->any())
-             <div class="alert alert-danger c-error">
+             <div class="alert c-error">
                  <ul>
                   @foreach ($errors->all() as $error)
-                    <li>{{ $error}}</li>
+                    <li class="li-error">{{ $error}}</li>
                   @endforeach
                     </ul>
              </div>

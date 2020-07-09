@@ -117,8 +117,12 @@ body{
     margin-left: 40px;
 }
 .c-error{
-    float: right;
-
+    float: center;
+    background: pink;
+    height: 90px;
+}
+.li-error{
+    list-style: none;
 }
 .show-main{
     width: 100%;
